@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Zema, présentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0E0D12;
+    --stage: #17151D;
+    --cream: #F4EFE6;
+    --cream-soft: rgba(244, 239, 230, 0.78);
+    --cream-quiet: rgba(244, 239, 230, 0.55);
+    --orange: #E85D1C;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+  @page { size: 1920px 1080px; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--ink); }
+  body { font-family: var(--sans); color: var(--cream); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { color: inherit; text-decoration: none; }
+
+  .slide {
+    width: 1920px; height: 1080px; position: relative; overflow: hidden;
+    background: var(--ink); page-break-after: always; break-after: page;
+    padding: 96px 120px;
+  }
+  .slide:last-child { page-break-after: auto; break-after: auto; }
+  .logo { height: 64px; display: block; }
+  .logo-corner { position: absolute; top: 88px; right: 120px; height: 52px; }
+  .foot {
+    position: absolute; left: 120px; bottom: 56px;
+    font-size: 20px; color: var(--cream-quiet);
+  }
+
+  h1, h2 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.02em; line-height: 1.02; }
+  h1 { font-size: 128px; white-space: nowrap; }
+  h2 { font-size: 112px; }
+  h3 { font-family: var(--serif); font-weight: 600; font-size: 46px; line-height: 1.1; letter-spacing: -0.01em; }
+  .lead { font-size: 34px; line-height: 1.45; color: var(--cream-soft); max-width: 30ch; }
+  .body { font-size: 26px; line-height: 1.5; color: var(--cream-soft); }
+  .tab { font-variant-numeric: tabular-nums; }
+
+  /* 1. Ouverture */
+  .s1 h1 { margin-top: 64px; }
+  .s1 .sub { font-size: 36px; color: var(--cream-soft); margin-top: 28px; }
+  .s1 .problem {
+    font-family: var(--serif); font-size: 44px; line-height: 1.3; max-width: 54ch;
+    margin-top: 56px; color: var(--cream);
+  }
+  .s1 .pillars {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 400px;
+    background: var(--stage); padding: 56px 120px 0;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 80px;
+  }
+  .s1 .pillars p { margin-top: 18px; font-size: 24px; line-height: 1.5; color: var(--cream-soft); }
+  .s1 .pillars .out { color: var(--cream); font-weight: 500; }
+  .s1 .foot { display: none; }
+
+  /* Écrans du produit */
+  .shot { display: block; width: 100%; height: auto; border-radius: 6px; }
+  .split { display: grid; grid-template-columns: 560px 1fr; gap: 88px; height: 100%; align-items: center; }
+  .split .text h2 { margin-bottom: 40px; }
+  .stage-right {
+    position: absolute; top: 0; right: 0; bottom: 0; width: 1200px;
+    background: var(--stage); display: flex; overflow: hidden; align-items: center; padding: 0 0 0 72px;
+  }
+  .stage-right .shot { border-radius: 6px 0 0 6px; width: 1500px; max-width: none; }
+  .s3 h2 { margin-top: 40px; }
+  .s3 .lead { max-width: none; margin-top: 28px; }
+  .s3 .stage-bottom {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 600px;
+    background: var(--stage); padding: 56px 240px 0; overflow: hidden;
+  }
+  .s3 .stage-bottom .shot { border-radius: 6px 6px 0 0; }
+  .s3 .foot { display: none; }
+
+  /* 4. Revenus */
+  .s4 h2 { margin-top: 40px; }
+  .s4 .lead { max-width: 34ch; margin-top: 28px; }
+  .sources {
+    margin-top: 72px; width: 1020px;
+    display: grid; grid-template-columns: 1fr 1fr; column-gap: 72px; row-gap: 40px;
+  }
+  .sources dt { font-family: var(--serif); font-weight: 600; font-size: 40px; line-height: 1.1; }
+  .sources dd { font-size: 23px; line-height: 1.45; color: var(--cream-soft); margin-top: 6px; }
+  .sources .yours dt { color: var(--orange); }
+  .field {
+    position: absolute; top: 0; right: 0; bottom: 0; width: 640px;
+    background: var(--cream); color: var(--ink); padding: 0 88px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .field h3 { font-size: 68px; font-weight: 500; line-height: 1.05; }
+  .field p { font-size: 28px; line-height: 1.5; margin-top: 32px; color: rgba(14, 13, 18, 0.78); }
+  .s4 .note { position: absolute; left: 120px; bottom: 104px; font-size: 19px; color: var(--cream-quiet); }
+
+  /* 6. Pourquoi Zema */
+  .s6 h2 { margin-top: 56px; font-size: 96px; white-space: nowrap; }
+  .s6 .sub { font-family: var(--serif); font-style: italic; font-size: 42px; color: var(--cream-soft); margin-top: 24px; }
+  .reasons { margin-top: 72px; display: grid; gap: 40px; }
+  .reason { display: grid; grid-template-columns: 560px 1fr; gap: 88px; align-items: baseline; }
+  .reason p { font-size: 27px; line-height: 1.5; color: var(--cream-soft); max-width: 46ch; }
+
+  /* 7. Appel */
+  .s7 { display: flex; flex-direction: column; justify-content: center; }
+  .s7 .call { font-family: var(--serif); font-weight: 500; font-size: 96px; line-height: 1.08; letter-spacing: -0.02em; max-width: 19ch; }
+  .s7 .cta {
+    display: inline-block; margin-top: 72px; background: var(--orange); color: var(--ink);
+    font-size: 30px; font-weight: 600; padding: 30px 48px; align-self: flex-start;
+  }
+  .s7 .url { font-size: 28px; color: var(--cream-soft); margin-top: 28px; }
+
+  /* 8. Contact */
+  .s8 { padding: 0; display: grid; grid-template-columns: 840px 1fr; }
+  .s8 > img { width: 840px; height: 1080px; object-fit: cover; object-position: 50% 30%; display: block; }
+  .s8 .who { padding: 0 120px; display: flex; flex-direction: column; justify-content: center; }
+  .s8 .who h2 { font-size: 104px; }
+  .s8 .role { font-size: 36px; margin-top: 28px; }
+  .s8 .org { font-size: 30px; color: var(--cream-soft); margin-top: 10px; }
+  .s8 .contact { margin-top: 64px; font-size: 28px; line-height: 1.8; color: var(--cream-soft); }
+  .s8 .contact a { color: var(--cream); }
+  .s8 .logo { margin-top: 88px; height: 56px; width: auto; align-self: flex-start; }
+</style>
+</head>
+<body>
+
+<!-- 1 -->
+<section class="slide s1">
+  <img class="logo" src="img/zema-logo.svg" alt="Zema">
+  <h1>Le back office des indépendants.</h1>
+  <p class="sub">Conçu pour les managers, labels et artistes indépendants.</p>
+  <p class="problem">Aujourd’hui, gérer sa carrière ou celle d’un artiste, c’est jongler entre 15 outils, 30 Excel et 5 partenaires. Zema centralise tout au même endroit.</p>
+  <div class="pillars">
+    <div>
+      <h3>Centraliser et contrôler</h3>
+      <p>Revenus (phono, SACEM, booking), dépenses, catalogue, contrats. Rapprochement des informations et contrôle des flux.</p>
+      <p class="out">Une vue 360° par artiste et par structure.</p>
+    </div>
+    <div>
+      <h3>Gérer</h3>
+      <p>Splits et reversements, commissions et facturation, catalogue et contrats.</p>
+      <p class="out">L’administratif enfin sous contrôle.</p>
+    </div>
+    <div>
+      <h3>Analyser et piloter</h3>
+      <p>P&amp;L par artiste et par projet, subventions, analyse des relevés distributeurs et SACEM, recoupement des contrats.</p>
+      <p class="out">Toutes les clés pour faire évoluer votre projet.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="slide s2">
+  <div class="split">
+    <div class="text">
+      <h2>Catalogue</h2>
+      <p class="lead">Retrouvez tout votre catalogue, ses métadonnées et ses splits. Zema repère même vos nouvelles sorties.</p>
+    </div>
+  </div>
+  <div class="stage-right"><img class="shot" src="img/dashboard-catalogue.jpg" alt="Catalogue de Léna T dans Zema"></div>
+  <p class="foot">zema-app.com · Bêta publique depuis le 16 juin 2026</p>
+</section>
+
+<!-- 3 -->
+<section class="slide s3">
+  <img class="logo-corner" src="img/zema-logo.svg" alt="Zema">
+  <h2>Contrats</h2>
+  <p class="lead">Tous vos contrats au même endroit : commissions, périmètres, avances. Zema vous prévient avant chaque échéance.</p>
+  <div class="stage-bottom"><img class="shot" src="img/dashboard-contrats.jpg" alt="Contrats de Léna T dans Zema"></div>
+</section>
+
+<!-- 4 -->
+<section class="slide s4">
+  <h2>Revenus</h2>
+  <p class="lead">Déposez vos relevés, quel que soit le format. Zema fait le tri, vous gardez le contrôle.</p>
+  <dl class="sources">
+    <div><dt>CSV et Excel</dt><dd>Alter K, Believe, TuneCore, DistroKid…</dd></div>
+    <div><dt>PDF</dt><dd>Relevés Wagram, lus par titre et par territoire</dd></div>
+    <div><dt>SACEM</dt><dd>Répartitions et relevés de compte</dd></div>
+    <div><dt>Booking</dt><dd>Cachets et revenus de scène</dd></div>
+    <div><dt>Ponctuels</dt><dd>Merch, synchro, forfaits : saisie manuelle</dd></div>
+    <div class="yours"><dt>Votre format</dt><dd>Vous le configurez une fois, Zema s’en souvient.</dd></div>
+  </dl>
+  <p class="note">Noms cités à titre indicatif, propriété de leurs détenteurs. Aucun partenariat.</p>
+  <div class="field">
+    <h3>Une vue par artiste et par structure</h3>
+    <p>Revenus, contrats, avances, décomptes, commissions, net.</p>
+  </div>
+  <p class="foot">zema-app.com · Bêta publique depuis le 16 juin 2026</p>
+</section>
+
+<!-- 5 -->
+<section class="slide s5">
+  <div class="split">
+    <div class="text">
+      <h2>Finances</h2>
+      <p class="lead">Le CA brut, les commissions et le net en un coup d’œil. Zema calcule, vous décidez.</p>
+    </div>
+  </div>
+  <div class="stage-right"><img class="shot" src="img/dashboard-finances.jpg" alt="Finances de la structure dans Zema"></div>
+  <p class="foot">zema-app.com · Bêta publique depuis le 16 juin 2026</p>
+</section>
+
+<!-- 6 -->
+<section class="slide s6">
+  <img class="logo-corner" src="img/zema-logo.svg" alt="Zema">
+  <h2>L’outil qui manquait aux indépendants</h2>
+  <p class="sub">Conçu par une pro de l’industrie qui vit les problèmes qu’elle résout.</p>
+  <div class="reasons">
+    <div class="reason"><h3>Conçu pour vous</h3><p>Construit par une pro active, 7 ans de terrain. Chaque fonctionnalité naît d’un besoin réel, pas d’une hypothèse produit.</p></div>
+    <div class="reason"><h3>Toute votre histoire, jamais perdue</h3><p>Du premier single aux premiers contrats, vous gardez la trace de tout ce que vous avez fait. Pas de trou noir, pas de réimport ailleurs.</p></div>
+    <div class="reason"><h3>Souveraineté pro</h3><p>Données hébergées dans l’UE (Irlande). Aucune exploitation commerciale, aucun entraînement d’IA. Le Copilot n’envoie que le nécessaire, à votre demande.</p></div>
+  </div>
+  <p class="foot">zema-app.com · Bêta publique depuis le 16 juin 2026</p>
+</section>
+
+<!-- 7 -->
+<section class="slide s7">
+  <p class="call">Essayez gratuitement et aidez-moi à construire l’outil dont nous avons besoin.</p>
+  <a class="cta" href="https://zema-app.com">Découvrir la bêta publique</a>
+  <p class="url"><a href="https://zema-app.com">zema-app.com</a></p>
+</section>
+
+<!-- 8 -->
+<section class="slide s8">
+  <img src="img/hanna.jpg" alt="Hanna Oblin">
+  <div class="who">
+    <h2>Hanna Oblin</h2>
+    <p class="role">Fondatrice de Zema</p>
+    <p class="org">Snailo Management &amp; Records</p>
+    <p class="contact">
+      <a href="mailto:hanna@snailo.fr">hanna@snailo.fr</a><br>
+      <span class="tab">06 03 63 48 23</span><br>
+      <a href="https://zema-app.com">zema-app.com</a>
+    </p>
+    <img class="logo" src="img/zema-logo.svg" alt="Zema">
+  </div>
+</section>
+
+</body>
+</html>
