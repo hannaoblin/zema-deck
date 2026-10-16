@@ -61,20 +61,20 @@
 
   /* Écrans du produit */
   .shot { display: block; width: 100%; height: auto; border-radius: 6px; }
-  .split { display: grid; grid-template-columns: 560px 1fr; gap: 88px; height: 100%; align-items: center; }
+  .split { display: grid; grid-template-columns: 500px 1fr; gap: 88px; height: 100%; align-items: center; }
   .split .text h2 { margin-bottom: 40px; }
   .stage-right {
-    position: absolute; top: 0; right: 0; bottom: 0; width: 1200px;
-    background: var(--stage); display: flex; overflow: hidden; align-items: center; padding: 0 0 0 72px;
+    position: absolute; top: 0; right: 0; bottom: 0; width: 1260px;
+    background: var(--stage); display: flex; overflow: hidden; align-items: center; justify-content: center; padding: 0 64px;
   }
-  .stage-right .shot { border-radius: 6px 0 0 6px; width: 1500px; max-width: none; }
+  .stage-right .shot { border-radius: 6px; width: 100%; }
   .s3 h2 { margin-top: 40px; }
   .s3 .lead { max-width: none; margin-top: 28px; }
   .s3 .stage-bottom {
     position: absolute; left: 0; right: 0; bottom: 0; height: 600px;
-    background: var(--stage); padding: 56px 240px 0; overflow: hidden;
+    background: var(--stage); padding: 0; display: flex; align-items: center; justify-content: center;
   }
-  .s3 .stage-bottom .shot { border-radius: 6px 6px 0 0; }
+  .s3 .stage-bottom .shot { border-radius: 6px; width: auto; height: 500px; }
   .s3 .foot { display: none; }
 
   /* 4. Revenus */
