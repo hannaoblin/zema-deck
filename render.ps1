@@ -6,4 +6,4 @@ $common = @("--headless=new", "--disable-gpu", "--user-data-dir=$env:TEMP\edgede
 
 Start-Process -FilePath $edge -Wait -ArgumentList ($common + @("--no-pdf-header-footer", "`"--print-to-pdf=$here\Zema-presentation.pdf`"", "`"$url`""))
 New-Item -ItemType Directory -Force "$here\preview" | Out-Null
-Start-Process -FilePath $edge -Wait -ArgumentList ($common + @("--hide-scrollbars", "--window-size=1920,8640", "`"--screenshot=$here\preview\all.png`"", "`"$url`""))
+Start-Process -FilePath $edge -Wait -ArgumentList ($common + @("--hide-scrollbars", "--window-size=1920,10800", "`"--screenshot=$here\preview\all.png`"", "`"$url`""))
